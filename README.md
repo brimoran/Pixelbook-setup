@@ -95,7 +95,10 @@ where $DEB is the path to the downloaded deb.
 
 ## Poppler
 
-```sudo apt-get install python-popple```
+```sudo apt-get install python-poppler```
+
+```sudo apt-get install poppler-utils```
+
 
 ### Zathura
 
