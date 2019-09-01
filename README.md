@@ -50,26 +50,10 @@ This will take a while.
 
 ## Install LaTeX
 
-A full install of LaTeX is very large (c. 5 GB!) so we will start with the smallest possible install and then add in the specific additional fonts and packages needed.
-
-Thankfully these days we can start with [TinyTex](https://yihui.name/tinytex/) and then add to its teeny weeny install:
-
+We have the space so a full install:
 ```
-wget -qO- "https://yihui.name/gh/tinytex/tools/install-unx.sh" \
-  | sh -s - --admin --no-path
+sudo apt-get install texlive-full
 ```
-
-Add the install location to the path to enable us to use ```pdflatex``` from anywhere in the terminal:
-
-```sudo ~/.TinyTeX/bin/*/tlmgr path add```
-
-Now to add the extra packages I need using ```tlmgr install```:
-
-```tlmgr install subfiles isodate substr enumitem datatool xfor fp pdfpages csquotes microtype hyphenat xcolor fancyhdr lastpage fira mweights fontaxes wrapfig capt-of mdframed needspace tcolorbox pgf environ trimspaces titlesec titlecaps ifnextok floatrow placeins adjustbox collectbox lcg relsize lineno pgfplots xltxtra float tabulary lipsum marginnote import```
-
-These are the very specific packages I need for the LaTeX templates I have created.  Your mileage **will** vary - try to compile your .tex files and install the .sty files that the error messages indicate are missing through ```tlmgr install```.
-
-**Note:** In the past I have encountered occasional problems when adding additional packages in this way after the initial install - specifically, packages may not be recognised as installed.  Running ```sudo mktexlsr``` sorts this out though.
 
 ## Install R Studio
 
