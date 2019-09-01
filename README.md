@@ -6,6 +6,10 @@ To see what we are dealing with here:
 
 It's Debian Stretch 9.9.
 
+And what is already installed:
+
+```apt list --installed```
+
 ## Install R
 
 The version in the repo is too old so:
@@ -93,7 +97,7 @@ then
 
 ### Pandoc
 
-Download deb file ```https://github.com/jgm/pandoc/releases/tag/2.7.3```
+Download deb file: https://github.com/jgm/pandoc/releases/tag/2.7.3
 
 Copy into Linux
 
@@ -192,8 +196,7 @@ autocmd! User GoyoLeave Limelight!
                                                                                                                        
 " Automatically start Goyo for certain filetypes and remove wrap                                                      
 au FileType markdown | Goyo | set linebreak                                                                           
-au FileType tex | Goyo | set linebreak                                                                                
-~                                           
+au FileType tex | Goyo | set linebreak                                                                                             
 ```
 And then from within Vim type:
 
