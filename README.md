@@ -93,6 +93,10 @@ Copy into Linux
 
 where $DEB is the path to the downloaded deb.
 
+## Poppler
+
+```sudo apt-get install python-popple```
+
 ### Zathura
 
 It's a bit of a pain having to flip back and forth to a browser to view compiled pdfs.  I prefer to use Zathura from the terminal or from Vim, especially because it uses Vim key bindings.
