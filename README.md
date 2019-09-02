@@ -93,12 +93,38 @@ Copy into Linux
 
 where $DEB is the path to the downloaded deb.
 
-## Poppler
+### Poppler
 
 ```sudo apt-get install python-poppler```
 
 ```sudo apt-get install poppler-utils```
 
+### Visual Code Studio
+
+Sometimes it's nice to have an alternative to Vim... Sublime Text looks too ugly for some reason so for a light weight editor we'll use Visual Code Studio instead:
+
+Enable the package repository by creating this file using Vim:
+
+```sudo vim /etc/apt/sources.list.d/vscode.list```
+
+And then add this into the file:
+
+```deb [arch=amd64] http://packages.microsoft.com/repos/vscode stable main```
+
+Save file and quit Vim.
+
+Add the keys:
+
+```
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+```
+Update repository and install:
+
+```
+sudo apt-get update
+sudo apt-get install code
+```
 
 ### Zathura
 
