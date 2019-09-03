@@ -26,9 +26,9 @@ Enable the CRAN repository and add the CRAN GPG key to your system by running th
 
 ```sudo apt update```
 
-Then install stuff that R needs, followed by r-base
+Then install stuff required by R and the packages we will install, followed by r-base
 
-```sudo apt-get install curl libcurl4-openssl-dev libxml2-dev libssl-dev libgdal-dev libproj-dev xorg libx11-dev libglu1-mesa-dev libcairo2-dev libudunits2-dev libv8-dev libprotobuf-dev libjq-dev protobuf-compiler r-base```
+```sudo apt-get install curl libcurl4-openssl-dev libxml2-dev libssl-dev libgdal-dev libproj-dev xorg libx11-dev libglu1-mesa-dev libcairo2-dev libudunits2-dev libv8-dev libprotobuf-dev libjq-dev protobuf-compiler phantomjs r-base```
 
 Check the installed version if you wish:
 
@@ -45,10 +45,6 @@ Let's install the packages we need in one command:
 ```install.packages(c("ggplot2","tidyverse","knitr","ggthemes","scales","ggmap","plotly","ggfortify","leaflet","leaflet.extras","rgdal","forecast","treemapify","dbscan","survival","googleVis","rmarkdown","flexdashboard","highcharter","devtools","maptools","mapview","treemap","networkD3","visNetwork","DiagrammeR","DT","ggcorrplot"))```
 
 This will take a while.
-
-Then in R:
-
-```webshot::install_phantomjs()```
 
 ```q()``` to exit R
 
