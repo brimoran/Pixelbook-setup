@@ -134,6 +134,12 @@ To launch an image viewer from the terminal:
 
 ```sudo apt-get install feh```
 
+## 7z
+
+To extract common compression format:
+
+```sudo apt-get install p7zip-full```
+
 ## Fine tuning
 
 ### Git
