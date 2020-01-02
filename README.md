@@ -89,6 +89,12 @@ Copy into Linux
 
 where $DEB is the path to the downloaded deb.
 
+### xlsx2csv
+
+To convert xlsx files to csv easily:
+
+```sudo apt-get install xlsx2csv```
+
 ### Poppler
 
 ```sudo apt-get install python-poppler```
