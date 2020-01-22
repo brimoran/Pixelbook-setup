@@ -12,6 +12,8 @@ And what is already installed:
 
 ## Install R
 
+```sudo apt-get update```
+
 The version in the repo is too old so:
 
 Install the dependencies necessary to add a new repository over HTTPS:
