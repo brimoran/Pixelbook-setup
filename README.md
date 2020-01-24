@@ -10,9 +10,31 @@ And what is already installed:
 
 ```apt list --installed```
 
+## Install LaTeX
+
+The version in the repository is old and has caused me some trouble with datatool, so we'll install the latest version as detailed at http://www.tug.org/texlive/acquire.html:
+
+Download the latest tar.gz:
+
+http://www.tug.org/texlive/acquire-netinstall.html
+
+Use ChromeOS files app to copy to the Linux container and back in the terminal unpack:
+
+```tar -xzf install-tl-unx.tar.gz```
+
+``cd`` into the unpacked folder and:
+
+```sudo ./install-tl``` (sudo seems to be necessary on Pixelbook)
+
+The install will take a long time.  When complete add to path:
+
+```PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH``` (check that this path is correct)
+
 ## Install R
 
 ```sudo apt-get update```
+
+```sudo apt update```
 
 The version in the repo is too old so:
 
@@ -25,8 +47,6 @@ Enable the CRAN repository and add the CRAN GPG key to your system by running th
 ```sudo apt-key adv --keyserver keys.gnupg.net --recv-key 'E19F5F87128899B192B1A2C2AD5F960A256A04AF'```
 
 ```sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/debian stretch-cran35/'```
-
-```sudo apt update```
 
 Then install stuff required by R and the packages we will install, followed by r-base
 
@@ -50,12 +70,6 @@ This will take a while.
 
 ```q()``` to exit R
 
-## Install LaTeX
-
-We have the space so a full install:
-```
-sudo apt-get install texlive-full
-```
 
 ## Install R Studio
 
