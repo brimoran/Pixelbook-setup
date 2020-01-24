@@ -117,6 +117,10 @@ To convert xlsx files to csv easily:
 
 ```sudo apt-get install poppler-utils```
 
+### Ghostscript
+
+```sudo apt-get install ghostscript```
+
 ### Visual Code Studio
 
 Sometimes it's nice to have an alternative to Vim... Sublime Text looks too ugly for some reason so for a light weight editor we'll use Visual Code Studio instead:
