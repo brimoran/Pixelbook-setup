@@ -191,6 +191,9 @@ If none exist:
 ```
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
+To get the public key to paste into git service:
+
+```cat ~/.ssh/id_rsa.pub```
 
 ### Customising Vim
 
