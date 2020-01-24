@@ -87,7 +87,7 @@ This failed at this point for me so ~~I restarted the terminal and~~:
 
 ```sudo apt --fix-broken install```
 
-```~~~sudo apt-get install python3-qtpy~~~```
+~~```sudo apt-get install python3-qtpy```~~
 
 (Strike through as these steps seemed unnecessary on a subsequent install.)
 
