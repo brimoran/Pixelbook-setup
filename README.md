@@ -26,9 +26,17 @@ Use ChromeOS files app to copy to the Linux container and back in the terminal u
 
 ```sudo ./install-tl``` (sudo seems to be necessary on Pixelbook)
 
-The install will take a long time.  When complete add to path:
+The install will take a long time.
+
+When complete test by temporarily adding to path:
 
 ```PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH``` (check that this path is correct)
+
+... and test that ```pdflatex --version``` works.  If it does then add the path to the .bashrc file:
+
+```cd```
+
+```vim .bashrc``` place the line somewhere in here and save and quit the .bashrc file.
 
 ## Install R
 
