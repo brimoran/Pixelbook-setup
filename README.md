@@ -32,9 +32,9 @@ The install will take a long time.  When complete add to path:
 
 ## Install R
 
-~~~```sudo apt-get update```
+```~~~sudo apt-get update~~~```
 
-~~~```sudo apt update```
+```~~~sudo apt update~~~```
 
 (strike through because weirdly I was unable to complete this step on a subsequent install as ```The following signatures were invalid: EXPKEYSIG 6494C6D6997C215E Google Inc. (Linux Packages Signing Authority)```... I imagine this is a temporary issue.)
 
@@ -83,11 +83,11 @@ https://www.rstudio.com/products/rstudio/download/#download
 
 where $DEB is the path to the downloaded deb.
 
-This failed at this point for me so ~~I restarted the terminal and:
+This failed at this point for me so ~~~I restarted the terminal and~~~:
 
 ```sudo apt --fix-broken install```
 
-~~```sudo apt-get install python3-qtpy```
+```~~~sudo apt-get install python3-qtpy~~~```
 
 (Strike through as these steps seemed unnecessary on a subsequent install.)
 
