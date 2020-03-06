@@ -40,11 +40,9 @@ When complete test by temporarily adding to path:
 
 ## Install R
 
-~~```sudo apt-get update```~~
+```sudo apt-get update```
 
-~~```sudo apt update```~~
-
-(strike through because weirdly I was unable to complete this step on a subsequent install as ```The following signatures were invalid: EXPKEYSIG 6494C6D6997C215E Google Inc. (Linux Packages Signing Authority)```... I imagine this is a temporary issue.)
+```sudo apt update```
 
 The version in the repo is too old so:
 
