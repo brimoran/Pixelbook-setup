@@ -15,6 +15,7 @@ And what is already installed:
 Set up git config:
 
 ```git config --global user.name "John Doe"```
+
 ```git config --global user.email johndoe@example.com```
 
 Confirm:
