@@ -4,15 +4,78 @@ To see what we are dealing with here:
 
 ```cat /etc/debian_version```
 
-It's Debian Stretch 9.9.
+It's Debian Buster 10.1.
 
 And what is already installed:
 
 ```apt list --installed```
 
+## Git
+
+Set up git config:
+
+```git config --global user.name "John Doe"```
+```git config --global user.email johndoe@example.com```
+
+Confirm:
+
+```
+git config --list
+```
+
+Create SSH key:
+
+```
+ls -al ~/.ssh
+# Lists the files in your .ssh directory, if they exist
+```
+
+If none exist:
+
+```
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+
+Show contents of public SSH key to copy to add to web git service:
+
+```
+cat ~/.ssh/id_rsa.pub
+```
+
+Add SSH key to webservice and then clone repo using SSH in the area you want it on your computer (for example create a Version Controlled folder in your home directory):
+
+e.g. with Gitlab
+
+```
+git clone git@gitlab.com:YOURGITUSERNAME/YOURREPO.git
+
+```
+## Vim
+
+Let's install VimPlug:
+
+```
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+Then copy .vimrc which I store in a git repository to home folder:
+
+e.g. navigate to folder and then
+
+```
+cp .vimrc ~/
+```
+
+And then install the plug ins from within the .vimrc file in Vim by typing:
+
+```
+:PlugInstall
+```
+
 ## Install LaTeX
 
-The version in the repository is old and has caused me some trouble with datatool, so we'll install the latest version as detailed at http://www.tug.org/texlive/acquire.html:
+Using this method http://www.tug.org/texlive/acquire.html to ensure we have the latest version (didn't check the version in the repository but the version in stretch caused me some trouble with datatool:
 
 Download the latest tar.gz:
 
@@ -28,7 +91,7 @@ Use ChromeOS files app to copy to the Linux container and back in the terminal u
 
 The install will take a long time.
 
-When complete test by temporarily adding to path:
+When complete there will be a prompt to add to PATH, MANPATH and INFOPATH.  Test by temporarily adding to path:
 
 ```PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH``` (check that this path is correct)
 
@@ -36,13 +99,18 @@ When complete test by temporarily adding to path:
 
 ```cd```
 
-```vim .bashrc``` place the line somewhere in here and save and quit the .bashrc file.
+```vim .bashrc``` place the line at the end of the file along with:
+
+```MANPATH=/usr/local/texlive/2019/texmf-dist/doc/man```                                                                               
+```INFOPATH=/usr/local/texlive/2019/texmf-dist/doc/info```
+
+Then save and quit Vim.
 
 ## Install R
 
 ```sudo apt-get update```
 
-```sudo apt update```
+```sudo apt-get upgrade```
 
 The version in the repo is too old so:
 
@@ -54,7 +122,7 @@ Enable the CRAN repository and add the CRAN GPG key to your system by running th
 
 ```sudo apt-key adv --keyserver keys.gnupg.net --recv-key 'E19F5F87128899B192B1A2C2AD5F960A256A04AF'```
 
-```sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/debian stretch-cran35/'```
+```sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/debian buster-cran35/'```
 
 Then install stuff required by R and the packages we will install, followed by r-base
 
