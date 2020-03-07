@@ -164,7 +164,7 @@ This failed at this point for me so ~~I restarted the terminal and~~:
 
 ~~```sudo apt-get install python3-qtpy```~~
 
-(Strike through as these steps seemed unnecessary on a subsequent install.)
+(Strike through as these steps were unnecessary with Buster.)
 
 then
 
@@ -176,7 +176,7 @@ then
 
 ### Pandoc
 
-Download deb file: https://github.com/jgm/pandoc/releases/tag/2.7.3
+Download deb file: https://github.com/jgm/pandoc/releases
 
 Copy into Linux
 
@@ -192,40 +192,31 @@ To convert xlsx files to csv easily:
 
 ### Poppler
 
-```sudo apt-get install python-poppler```
-
 ```sudo apt-get install poppler-utils```
 
 ### Ghostscript
 
 ```sudo apt-get install ghostscript```
 
-### Visual Code Studio
+### Sublime Text
 
-Sometimes it's nice to have an alternative to Vim... Sublime Text looks too ugly for some reason so for a light weight editor we'll use Visual Code Studio instead:
+Sometimes it's nice to have an alternative to Vim...
 
-Enable the package repository by creating this file using Vim:
+https://www.sublimetext.com/docs/3/linux_repositories.html
 
-```sudo vim /etc/apt/sources.list.d/vscode.list```
+Install the GPG key:
 
-And then add this into the file:
+```wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -```
 
-```deb [arch=amd64] http://packages.microsoft.com/repos/vscode stable main```
+Add stable channel:
 
-Save file and quit Vim.
+```echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list```
 
-Add the keys:
+Update sources and install:
 
-```
-curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
-```
-Update repository and install:
+```sudo apt-get update```
 
-```
-sudo apt-get update
-sudo apt-get install code
-```
+```sudo apt-get install sublime-text```
 
 ### Zathura
 
@@ -245,116 +236,6 @@ To extract common compression format:
 
 ```sudo apt-get install p7zip-full```
 
-## Fine tuning
-
-### Git
-
-Set up git config:
-
-```
-git config --global user.name "John Doe"
-git config --global user.email johndoe@example.com
-```
-
-Confirm:
-
-```
-git config --list
-```
-
-Create SSH key:
-
-```
-ls -al ~/.ssh
-# Lists the files in your .ssh directory, if they exist
-```
-
-If none exist:
-
-```
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-```
-To get the public key to paste into git service:
-
-```cat ~/.ssh/id_rsa.pub```
-
-### Customising Vim
-
-I like the hybrid material colour scheme so let's set that up and a few other things.
-
-Let's install VimPlug:
-
-```
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-```
-
-Then create .vimrc file:
-
-```cd```
-```vim .vimrc```
-
-**Assuming you are comfortable with Vim**, edit the file using Vim:
-
-```vim .vimrc```
-
-Add the following into the file:
-
-```
-" Load Plugins                                                                                                        
-call plug#begin()                                                                                                     
-                                                                                                                       
-        Plug 'flazz/vim-colorschemes'                                                                                 
-        Plug 'junegunn/goyo.vim'                                                                                      
-        Plug 'junegunn/limelight.vim'                                                                                 
-"       Plug 'patstockwell/vim-monokai-tasty'                                                                         
-
-call plug#end()                                                                                                       
-
-" Appearance                                                                                                          
-set number                                                                                                            
-syntax on                                                                                                             
-set background=dark linebreak                                                                                         
-colorscheme hybrid_material                                                                                           
-"colorscheme vim-monokai-tasty                                                                                        
-                                                                                                                       
-" Set spelling. Turn off with :setnospell                                                                             
-setlocal spell spelllang=en_gb                                                                                        
-                                                                                                                       
-" Also start and stop Limelight when Goyo starts or stops                                                             
-autocmd! User GoyoEnter Limelight                                                                                     
-autocmd! User GoyoLeave Limelight!                                                                                    
-                                                                                                                       
-" Automatically start Goyo for certain filetypes and remove wrap                                                      
-au FileType markdown | Goyo | set linebreak                                                                           
-au FileType tex | Goyo | set linebreak                                                                                             
-```
-And then from within Vim type:
-
-```:source %``` and then
-```:PlugInstall```
-
-Let Vim do its stuff.
-
-(Alternatively just copy your .vimrc file that you are happy with from elsewhere... remember it is a hidden file)
-
 # Backup container
 
-At the time of writing this is an experimental feature so to turn on type this address into the chrome search bar:
-
-```chrome://flags/#crostini-backup```
-
-Then head to the chrome settings and start the backup from within the Linux (Beta) options.
-
-# Clone git repos
-
-Show contents of public SSH key to copy to add to web git service:
-
-```
-cat ~/.ssh/id_rsa.pub
-```
-Add SSH key to webservice and then clone repo using SSH in the area you want it on your computer:
-
-```
-git clone git@gitlab.com:YOURGITUSERNAME/YOURREPO.git
-```
+Head to the chrome settings and start the backup from within the Linux (Beta) options.
