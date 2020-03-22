@@ -236,6 +236,12 @@ To extract common compression format:
 
 ```sudo apt-get install p7zip-full```
 
+## Filezilla
+
+For FTP
+
+```sudo apt-get install filezilla```
+
 # Backup container
 
 Head to the chrome settings and start the backup from within the Linux (Beta) options.
