@@ -172,6 +172,22 @@ then
  
  again which worked fine.
 
+## Python stuff
+
+### pip
+
+``sudo apt install python3-pip``
+
+### pandas
+
+``sudo apt-get install python3-pandas``
+
+### xlsx2csv
+
+To convert xlsx files to csv easily:
+
+```sudo apt-get install xlsx2csv```
+
 ## Additional goodies
 
 ### Pandoc
@@ -183,12 +199,6 @@ Copy into Linux
 ```sudo dpkg -i $DEB```
 
 where $DEB is the path to the downloaded deb.
-
-### xlsx2csv
-
-To convert xlsx files to csv easily:
-
-```sudo apt-get install xlsx2csv```
 
 ### Poppler
 
