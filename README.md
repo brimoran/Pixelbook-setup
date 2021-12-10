@@ -248,9 +248,15 @@ To extract common compression format:
 
 ## Filezilla
 
-For FTP
+For FTP:
 
 ```sudo apt-get install filezilla```
+
+## MAME tools
+
+To manage chd files:
+
+```sudo apt install -y --no-install-recommends mame-tool```
 
 # Backup container
 
