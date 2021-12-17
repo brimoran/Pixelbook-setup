@@ -51,6 +51,13 @@ e.g. with Gitlab
 git clone git@gitlab.com:YOURGITUSERNAME/YOURREPO.git
 
 ```
+
+Add public key to any servers you need to access:
+
+```
+ssh-copy-id -i ~/.ssh/id_rsa.pub YOURUSERNAMEE@SERVERIPADDRESS
+```
+
 ## Vim
 
 Let's install VimPlug:
