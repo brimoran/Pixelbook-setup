@@ -75,7 +75,7 @@ e.g. navigate to folder and then
 cp .vimrc ~/
 ```
 
-And then install the plug ins from within the .vimrc file in Vim by typing:
+And then install the plug ins from within Vim by typing:
 
 ```
 :PlugInstall
