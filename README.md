@@ -82,6 +82,15 @@ And then install the plug ins from within Vim by typing:
 ```
 :PlugInstall
 ```
+## Other dot files
+
+Copy .bashrc from git repo.
+
+e.g. navigate to folder and then
+
+```
+cp .bashrc ~/
+```
 
 ## Install LaTeX
 
@@ -287,3 +296,15 @@ To OCR PDFs example: ocrmypdf -l eng input.pdf output.pdf
 For flexible tools to rename file in BASH:
 
 ```sudo apt install -y rename```
+
+## Parallel
+
+To use multiple course in bash scripts:
+
+```sudo apt install -y parallel```
+
+# Firefox
+
+To scrape websites using R:
+
+```sudo apt-get install firefox-esr```
