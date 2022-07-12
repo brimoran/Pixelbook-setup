@@ -1,10 +1,12 @@
 # Pixelbook Linux set up
 
+Provide 30 GB of disk space, install will take 15 GB.
+
 To see what we are dealing with here:
 
 ```cat /etc/debian_version```
 
-It's Debian Buster 10.1.
+It's Debian Buster 11.4.
 
 And what is already installed:
 
@@ -128,17 +130,24 @@ Install the dependencies necessary to add a new repository over HTTPS:
 
 Enable the CRAN repository and add the CRAN GPG key to your system by running the following commands:
 
-```sudo apt-key adv --keyserver keys.gnupg.net --recv-key 'E19F5F87128899B192B1A2C2AD5F960A256A04AF'```
+```apt-key adv --keyserver keyserver.ubuntu.com --recv-key '95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7'```
 
-```sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/debian buster-cran35/'```
+```sudo add-apt-repository 'deb http://cloud.r-project.org/bin/linux/debian bullseye-cran40/'```
 
-Then install stuff required by R and the packages we will install, followed by r-base
+```sudo apt update```
 
-```sudo apt-get install curl libcurl4-openssl-dev libxml2-dev libssl-dev libgdal-dev libproj-dev xorg libx11-dev libglu1-mesa-dev libcairo2-dev libudunits2-dev libv8-dev libprotobuf-dev libjq-dev protobuf-compiler phantomjs r-base```
+Then install R:
+
+```sudo apt install r-base r-base-dev```
 
 Check the installed version if you wish:
 
 ```R --version```
+
+Then install stuff required the packages we will install.
+
+```sudo apt-get install curl libcurl4-openssl-dev libxml2-dev libssl-dev libgdal-dev libproj-dev xorg libx11-dev libglu1-mesa-dev libcairo2-dev libudunits2-dev libv8-dev libprotobuf-dev libjq-dev protobuf-compiler cmake```
+
 
 ## Install useful R packages
 
@@ -152,6 +161,10 @@ Let's install the packages we need in one command:
 
 This will take a while.
 
+After it completes, to enable mapshot to work (untested but necessary on MacOS):
+
+webshot::install_phantomjs()
+
 ```q()``` to exit R
 
 
@@ -161,21 +174,13 @@ Download the deb:
 
 https://www.rstudio.com/products/rstudio/download/#download
 
-```sudo dpkg -i $DEB```
+```sudo dpkg -i DEB```
 
-where $DEB is the path to the downloaded deb.
+where DEB is the path to the downloaded deb.
 
-This failed at this point for me so ~~I restarted the terminal and~~:
+This failed at this point for me so:
 
 ```sudo apt --fix-broken install```
-
-~~```sudo apt-get install python3-qtpy```~~
-
-(Strike through as these steps were unnecessary with Buster.)
-
-then
-
-```sudo dpkg -i $DEB```
  
  again which worked fine.
 
@@ -203,9 +208,9 @@ Download deb file: https://github.com/jgm/pandoc/releases
 
 Copy into Linux
 
-```sudo dpkg -i $DEB```
+```sudo dpkg -i DEB```
 
-where $DEB is the path to the downloaded deb.
+where DEB is the path to the downloaded deb.
 
 ### Poppler
 
@@ -265,6 +270,20 @@ To manage chd files:
 
 ```sudo apt install -y --no-install-recommends mame-tool```
 
-# Backup container
+## Mosh
 
-Head to the chrome settings and start the backup from within the Linux (Beta) options.
+for more stable connections to remote servers:
+
+```sudo apt install -y mosh```
+
+## OCRmyPDF
+
+To OCR PDFs example: ocrmypdf -l eng input.pdf output.pdf
+
+```sudo apt install -y ocrmypdf```
+
+## Rename
+
+For flexible tools to rename file in BASH:
+
+```sudo apt install -y rename```
