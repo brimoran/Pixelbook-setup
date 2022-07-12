@@ -174,6 +174,11 @@ After it completes, to enable mapshot to work (untested but necessary on MacOS):
 
 webshot::install_phantomjs()
 
+And then for ggmap
+
+register_google(key = "[your key]", write = TRUE) # get key from Google Cloud Console, APIs & Services > Credentials
+
+
 ```q()``` to exit R
 
 
